@@ -23,7 +23,8 @@ export default function Article() {
 
     const article = useSelector((state) => state.salecka.value.article);
     const cart = useSelector((state) => state.salecka.value.cart);
-    const [firstPic, setFirstPic] = useState(article.image[0]);
+    //const [firstPic, setFirstPic] = useState(article.image[0]);
+    const [firstPic, setFirstPic] = useState('');
 
 
     useEffect(() => {
@@ -86,7 +87,7 @@ export default function Article() {
                     {pics}
                 </div>
                 <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'55vw', cursor:'pointer'}} onClick={() => setIsArticleModal(true)}>
-                    <img src={firstPic} style={{width:300}} alt={article.name - article.subname}/>
+                    {/* <img src={firstPic} style={{width:300}} alt={article.name - article.subname}/> */}
                 </div>
         </div>
 

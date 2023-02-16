@@ -4,8 +4,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import salecka from '../reducers/salecka';
+
+
+import { persistStore, persistReducer } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+import storage from 'redux-persist/lib/storage';
 
 
 import Index from './index';
@@ -13,16 +18,29 @@ import women from './women';
 import Men from '../components/Men';
 
 
+
+
+
+
+const reducers = combineReducers({salecka});
+
+const persistConfig = {key: 'salecka', storage};
+
 const store = configureStore({
-  reducer: {salecka},
+  reducer: persistReducer(persistConfig, reducers),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}),
 });
+
+const persistor = persistStore(store);
 
 function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Head>
-        <title>Next.js App</title>
-      </Head>
+      <PersistGate persistor={persistor}>
+        <Head>
+          <title>Next.js App</title>
+        </Head>
+      </PersistGate>
 
       {/* <Router>
         <Routes>
