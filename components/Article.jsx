@@ -23,8 +23,9 @@ export default function Article() {
 
     const article = useSelector((state) => state.salecka.value.article);
     const cart = useSelector((state) => state.salecka.value.cart);
-    //const [firstPic, setFirstPic] = useState(article.image[0]);
-    const [firstPic, setFirstPic] = useState('');
+    const [firstPic, setFirstPic] = useState(article.image[0]);
+    //const [firstPic, setFirstPic] = useState('');
+    console.log('FIRST PIC => ', firstPic);
 
 
     useEffect(() => {
@@ -65,7 +66,7 @@ export default function Article() {
 
     const pics = article.image.map((el,i) => {
         return(<div key={i} style={{cursor:'pointer'}} onClick={() => changeFirstPic(el)}>
-            <img src={el} style={{width:180}}  alt={article.name - article.subname}/>
+            <img src={el} style={{width:180}}  alt={`${article.name} - ${article.subname}`}/>
         </div>)
     })
 
@@ -87,7 +88,7 @@ export default function Article() {
                     {pics}
                 </div>
                 <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'55vw', cursor:'pointer'}} onClick={() => setIsArticleModal(true)}>
-                    {/* <img src={firstPic} style={{width:300}} alt={article.name - article.subname}/> */}
+                    <img src={firstPic} style={{width:300}} alt={`${article.name} - ${article.subname}`}/>
                 </div>
         </div>
 
@@ -96,10 +97,10 @@ export default function Article() {
                 <p style={{fontFamily:'DIN condensed', fontSize:25}}>{article.name} - {article.subname} </p>
                 <p style={{fontFamily:'DIN condensed', fontSize:45}}>{article.price}€</p>
             </div>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>DESCRIPTION: <br/><p style={{fontFamily:'DIN condensed', fontSize:20, fontWeight:'lighter', color:'gray'}}>{article.description}</p></p>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>COMPOSITION: <br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.composition}</p></p>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>CONSEIL D'ENTRETIEN: <br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.advice}</p></p>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>IDENTIFIANT(S): <br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.ids}</p></p>
+            <p style={{fontFamily:'DIN condensed', fontSize:25}}>DESCRIPTION: </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, fontWeight:'lighter', color:'gray'}}>{article.description}</p>
+            <p style={{fontFamily:'DIN condensed', fontSize:25}}>COMPOSITION: </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.composition}</p>
+            <p style={{fontFamily:'DIN condensed', fontSize:25}}>CONSEIL D'ENTRETIEN: </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.advice}</p>
+            <p style={{fontFamily:'DIN condensed', fontSize:25}}>IDENTIFIANT(S): </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.ids}</p>
             <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around', alignItems:'center',height:125,}}>
                 <button
                     style={{color:'black', backgroundColor:'white', borderWidth:1.5, borderColor:'black', borderRadius:20, fontSize:20, fontFamily:'DIN Condensed', width:150, height:35, cursor:'pointer'}}

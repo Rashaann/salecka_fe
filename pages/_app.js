@@ -40,6 +40,7 @@ function App({ Component, pageProps }) {
         <Head>
           <title>Next.js App</title>
         </Head>
+      <Component {...pageProps} />
       </PersistGate>
 
       {/* <Router>
@@ -48,7 +49,6 @@ function App({ Component, pageProps }) {
           <Route path="/women" element={<women />} />
         </Routes>
       </Router> */}
-      <Component {...pageProps} />
 
       {/* <BrowserRouter>
           <Routes>

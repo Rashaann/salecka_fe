@@ -128,7 +128,7 @@ export default function Children() {
 
     const articles = articlesList.map((el,i) => {
         const firstImg = el.image[0];
-        let heartIcon = <FontAwesomeIcon icon={faHeart} size='s' color='black' />
+        let heartIcon = <FontAwesomeIcon icon={faHeart} size='sm' color='black' />
         if (favs.some((e) => e.token === el.token)){
             heartIcon = <FaHeart size={20} color='black' />
         }
