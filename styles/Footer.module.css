@@ -1,0 +1,112 @@
+@media only screen and (min-width: 900px){
+    /*Computers & Tablets [601px -> 1200px]*/
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width:100vw;
+        height:80vh;
+        padding-left: 20px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 60vh;
+        width: 100vw;
+    }
+    
+    .subContainer {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        width: 30vw;
+    }
+    
+    
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    
+    .text {
+        font-size: 17px;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+    
+    .signature {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 20vh;
+    }
+    
+    .signText {
+        font-size: 13px;
+        color: whitesmoke;
+    }
+}
+@media only screen and (max-width: 900px){
+	/*Big & Small smartphones [426px -> 600px]*/
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width:100vw;
+        min-height:60vh;
+        padding-left: 20px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 60vh;
+        width: 100vw;
+    }
+    
+    .subContainer {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        width: 30vw;
+    }
+    
+    
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    
+    .text {
+        font-size: 17px;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+    
+    .signature {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 20vh;
+    }
+    
+    .signText {
+        font-size: 13px;
+        color: whitesmoke;
+    }
+}

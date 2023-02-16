@@ -1,0 +1,182 @@
+@media only screen and (min-width: 900px){
+    /*Tablets [601px -> 1200px]*/
+    .container{
+        display:flex;
+        padding:30px;
+    }
+
+
+
+
+
+    .subContainer{
+        width:250px;
+        height:95vh;
+        overflow-y:scroll;
+    }
+    .menu{
+        cursor: pointer;
+    }
+
+    
+    .menu:hover{
+        font-size: 25px;
+    }
+
+
+
+
+    .noArticles{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        height:80vh;
+        width:80vw;
+    }
+    .artFound{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        align-items:center;
+        height:95vh;
+        width:80vw;
+    }
+
+
+    .artContainer{
+        width:220px;
+        height:330px;
+        padding-left:30px;
+        padding-right:30px;
+    }
+    .artSubContainer{
+        display: flex;
+        flex-direction:column;
+        width:200px;
+        height:300px;
+        border-radius:10px;
+    }
+    .heartIcon{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        width:30px;
+        height:30px;
+        background-color:white;
+        border-radius:20px;
+    }
+
+    .lowerPart{
+        display:flex;
+        height:60px;
+        justify-content:space-around;
+        align-items:center;
+        cursor:pointer;
+    }
+    .subLowerPart{
+        width:90px;
+        height:60px;
+    }
+
+    .text{
+        font-size:14px;
+    }
+}
+@media only screen and (max-width: 900px){
+	/*Big smartphones [426px -> 600px]*/
+    .container{
+        display:flex;
+        flex-direction: column;
+
+    }
+
+
+
+
+    .menuTitle{
+        padding:20px;
+        cursor:pointer;
+    }
+
+    .subContainer{
+        width:100vw;
+        height:50vh;
+        overflow-y:scroll;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .menu{
+        cursor: pointer;
+    }
+
+    
+    .menu:hover{
+        font-size: 25px;
+    }
+
+
+
+
+    .noArticles{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        height:80vh;
+        width:80vw;
+    }
+    .artFound{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        height:95vh;
+        width:100vw;
+        overflow-y: scroll;
+    }
+
+
+    .artContainer{
+        width:80vw;
+        height:80vh;
+        padding-left:30px;
+        padding-right:30px;
+    }
+    .artSubContainer{
+        display: flex;
+        flex-direction:column;
+        width:70vw;
+        height:70vh;
+        border-radius:10px;
+        /* border: 1px solid black; */
+    }
+    .heartIcon{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        width:30px;
+        height:30px;
+        background-color:white;
+        border-radius:20px;
+    }
+
+    .lowerPart{
+        display:flex;
+        height:60px;
+        justify-content:space-around;
+        align-items:center;
+        cursor:pointer;
+    }
+    .subLowerPart{
+        width:90px;
+        height:60px;
+    }
+    .text{
+        font-size: 18px;
+    }
+}
+
+

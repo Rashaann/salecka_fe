@@ -1,0 +1,248 @@
+@media only screen and (min-width: 900px){
+    /* COMPUTERS */
+    .body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: black;
+        width: 100vw;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width:25vw;
+    }
+    
+    
+    
+    .beforeConnection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:100px;
+    }
+    
+    .afterConnection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        min-width:90px;
+    }
+    
+    
+    .favs {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:90px;
+    }
+    
+    .cart {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:80px;
+    }
+    
+    
+    .popoverContainer {
+        width:230px;
+        border-top: 1px solid black;
+    }
+    
+    .popoverTitle {
+        font-size:22px;
+        font-family: 'DIN Condensed';
+    }
+    
+    .popoverContent {
+        width:160px;
+        color: rgb(78, 77, 77);
+        font-size:20px;
+        font-family: 'DIN Condensed';
+        padding-inline-start:20px;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 900px){
+    /*Tablets [601px -> 1200px]*/
+    .body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: black;
+        width: 100vw;
+        padding-left: 20px;
+        padding-right: 40px;
+    }
+    
+    
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width:25vw;
+    }
+    
+    
+    
+    .beforeConnection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:100px;
+    }
+    
+    .afterConnection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        min-width:90px;
+    }
+    
+    
+    .favs {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:90px;
+    }
+    
+    .cart {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:80px;
+    }
+    
+    
+    .popoverContainer {
+        width:230px;
+        border-top: 1px solid black;
+    }
+    
+    .popoverTitle {
+        font-size:22px;
+        font-family: 'DIN Condensed';
+    }
+    
+    .popoverContent {
+        width:160px;
+        color: rgb(78, 77, 77);
+        font-size:20px;
+        font-family: 'DIN Condensed';
+        padding-inline-start:20px;
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background-color: black;
+        width: 100vw;
+        padding-left: 20px;
+    }
+    
+    
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width:25vw;
+    }
+    
+    
+    
+    .beforeConnection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:44px;
+    }
+    
+    .afterConnection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:44px;
+    }
+    
+    
+    .favs {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:90px;
+    }
+    
+    .cart {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: whitesmoke;
+        cursor: pointer;
+        width:80px;
+    }
+    
+    
+    .popoverContainer {
+        width:230px;
+        border-top: 1px solid black;
+    }
+    
+    .popoverTitle {
+        font-size:22px;
+        font-family: 'DIN Condensed';
+    }
+    
+    .popoverContent {
+        width:160px;
+        color: rgb(78, 77, 77);
+        font-size:20px;
+        font-family: 'DIN Condensed';
+        padding-inline-start:20px;
+        cursor: pointer;
+    }
+}

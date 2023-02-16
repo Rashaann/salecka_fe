@@ -1,0 +1,156 @@
+@media only screen and (min-width: 600px){
+    /*COMPUTERS & Tablets [601px -> 1200px]*/
+    .body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width:100vw;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width:100vw;
+        height:10vh;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    
+    .anchor {
+        text-decoration: none;
+    }
+
+
+
+    .categories{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width:80vw;
+    }
+
+
+    .searchIcon{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:5vh;
+        width:40px;
+        border-top-left-radius:20px;
+        border-bottom-left-radius:20px;
+        border-top:1px solid black;
+        border-bottom:1px solid black;
+        border-left:1px solid black;
+        padding-left:10px;
+    }
+
+    .input{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:20vw;
+        height:5vh;
+        border-top-right-radius:20px;
+        border-bottom-right-radius:20px;
+        font-size:17px;
+        padding:10px;
+        font-family:'DIN Condensed';
+        border-top:1px solid black;
+        border-bottom:1px solid black;
+        border-right: 1px solid black;
+        border-left-width:0px;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width:100vw;
+        min-height:8vh;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width:100vw;
+        height:8vh;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    
+
+
+    .categories{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:8vh;
+        width:100vw;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    
+    .categoriesContainer {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        width:100vw;
+    }
+    
+    
+    .popoverContent {
+        width:160px;
+        color: rgb(78, 77, 77);
+        font-size:20px;
+        font-family: 'DIN Condensed';
+        padding-inline-start:20px;
+        cursor: pointer;
+    }
+
+
+
+
+    .anchor {
+        text-decoration: none;
+    }
+
+
+
+
+    .searchIcon{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:8vh;
+        width:10vw;
+        cursor:pointer;
+    }
+
+
+    .input{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:35vw;
+        height:5vh;
+        font-size:17px;
+        padding:10px;
+        font-family:'DIN Condensed';
+        border-bottom:1px solid black;
+        border-top-width:0px;
+        border-left-width:0px;
+        border-right-width:0px;
+    }
+}
+
+
+
