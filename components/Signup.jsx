@@ -59,7 +59,7 @@ export default function Signup() {
         //CHECK IF THE VERIFICATION PASSWORD IS SAME AS THE FIRST ONE ENTERED
         //+ CHECK IF EMAIL ENTERED IS A VALID ONE
         if(isSamePassword && regex.test(email)){
-            fetch('http://192.168.0.35:3000/users/signup', {
+            fetch('https://salecka-be-2me8.vercel.app/users/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 

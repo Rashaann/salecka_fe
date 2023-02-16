@@ -50,7 +50,7 @@ export default function Women() {
     useEffect(() => {
         setScreenWidth(window.innerWidth);
         setScreenHeight(window.innerHeight);
-        fetch(`http://192.168.0.35:3000/articles/`)
+        fetch(`https://salecka-be-2me8.vercel.app/articles/`)
         .then(response => response.json())
         .then(data => {
             setArticlesList(data.articles);

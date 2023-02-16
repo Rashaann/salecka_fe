@@ -46,7 +46,7 @@ export default function Newsletter() {
     </p>
 
     const newsletterSubscription = () => {
-        fetch('http://192.168.0.35:3000/clientList/newEmail', {
+        fetch('https://salecka-be-2me8.vercel.app/clientList/newEmail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ 

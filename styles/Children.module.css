@@ -34,6 +34,7 @@
         height:80vh;
         width:80vw;
     }
+    
     .artFound{
         display:flex;
         flex-wrap:wrap;
@@ -41,6 +42,7 @@
         align-items:center;
         height:95vh;
         width:80vw;
+        overflow-y: scroll;
     }
 
 

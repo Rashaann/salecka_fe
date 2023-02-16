@@ -19,7 +19,7 @@ export default function ModalConnection(props) {
     // const navigate = useNavigate();
 
     const handleConnection = () => {
-        fetch('http://192.168.0.35:3000/users/signin', {
+        fetch('https://salecka-be-2me8.vercel.app/users/signin', {
             method:'POST',
             headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ 
