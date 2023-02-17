@@ -2,6 +2,7 @@
     /*Tablets [601px -> 1200px]*/
     .container{
         display:flex;
+        justify-content: space-around;
         padding:30px;
     }
 
@@ -41,24 +42,35 @@
         justify-content:flex-start;
         align-items:center;
         height:95vh;
-        width:80vw;
+        width:70vw;
         overflow-y: scroll;
     }
 
 
     .artContainer{
-        width:220px;
-        height:330px;
-        padding-left:30px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:270px;
+        height:380px;
         padding-right:30px;
-        
+        background-color: white;
     }
+    
     .artSubContainer{
         display: flex;
         flex-direction:column;
         width:200px;
         height:300px;
         border-radius:10px;
+    }
+    .artSubContainer:hover{
+        display: flex;
+        flex-direction:column;
+        width:250px;
+        height:350px;
+        border-radius:10px;
+        box-shadow: 5px 5px 5px gray;
     }
     .heartIcon{
         display:flex;

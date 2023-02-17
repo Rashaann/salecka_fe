@@ -13,6 +13,7 @@ import SubHeader from './SubHeader';
 import Footer from './Footer';
 import ModalConnection from './ModalConnection';
 import ModalLogoutMessage from './ModalLogoutMessage';
+import Router from 'next/router';
 
 
 function Home() {
@@ -65,8 +66,8 @@ function Home() {
     <div className={styles.main}>
       <Head>
           <title>SALECKA - Le luxe à la portée de tous</title>
-          <img src='logo_black.png'/>
-        </Head>
+      </Head>
+
       {isConnectionModal && <ModalConnection setIsConnectionModal={setIsConnectionModal} />}
       {isLoggedOut && <ModalLogoutMessage setIsLoggedOut={setIsLoggedOut} />}
       <div>
@@ -86,14 +87,13 @@ function Home() {
           naturalSlideHeight={screenHeight}
           interval={5000}
           isPlaying={true}
-          totalSlides={4}
+          totalSlides={3}
         >
           
           <Slider style={{width:'100vw', height:'90vh',}}>
-            <Slide index={0}><img src='image2.jpg' width={screenWidth/2} height={screenHeight/2}/></Slide>
-            <Slide index={1}><img src='logo_white.png' width={screenWidth/2} height={screenHeight/2} /></Slide>
-            <Slide index={2}><img src='logo_black.png' width={screenWidth/2} height={screenHeight/2} /></Slide>
-            <Slide index={3}><img src='image3.jpg' width={screenWidth/2} height={screenHeight/2} /></Slide>
+            <Slide index={0}><img src='image1.jpeg' width={screenWidth} height={screenHeight} style={{cursor:'pointer'}} onClick = {() => Router.push('/women')}/></Slide>
+            <Slide index={1}><img src='image2.png' width={screenWidth} height={screenHeight} style={{cursor:'pointer'}} onClick = {() => Router.push('/men')} /></Slide>
+            <Slide index={2}><img src='image3.jpg' width={screenWidth} height={screenHeight} style={{cursor:'pointer'}} onClick = {() => Router.push('/children')} /></Slide>
           </Slider>
           
           {/* <ButtonBack>Back</ButtonBack>

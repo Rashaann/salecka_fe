@@ -149,7 +149,7 @@ export default function Men() {
         
         const article = <div key={i} className={styles.artContainer}>
             <div className={styles.artSubContainer}>
-                <div style={{display:'flex', width:200, height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
+                <div style={{display:'flex', width:'auto', height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
                     <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
                         {/* <FontAwesomeIcon icon={faHeart} size='s' color='black' /> */}
                         {heartIcon}
