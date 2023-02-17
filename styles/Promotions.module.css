@@ -50,6 +50,7 @@
         height:330px;
         padding-left:30px;
         padding-right:30px;
+        
     }
     .artSubContainer{
         display: flex;
@@ -133,14 +134,17 @@
         flex-wrap:wrap;
         justify-content:center;
         align-items:center;
-        height:95vh;
+        min-height:95vh;
         width:100vw;
-        overflow-y: scroll;
+
     }
 
 
     .artContainer{
-        width:80vw;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:50vw;
         height:80vh;
         padding-left:30px;
         padding-right:30px;
@@ -148,7 +152,7 @@
     .artSubContainer{
         display: flex;
         flex-direction:column;
-        width:70vw;
+        width:48vw;
         height:70vh;
         border-radius:10px;
         /* border: 1px solid black; */
@@ -165,18 +169,17 @@
     }
 
     .lowerPart{
-        display:flex;
-        height:60px;
-        justify-content:space-around;
-        align-items:center;
+        height:25vh;
+        width:48vw;
+        justify-content:flex-start;
+        align-items:stretch;
         cursor:pointer;
     }
-    .subLowerPart{
-        width:90px;
-        height:60px;
-    }
     .text{
-        font-size: 18px;
+        font-size: 20px;
+    }
+    .price{
+        font-size:27px;
     }
 }
 

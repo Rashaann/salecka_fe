@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 
@@ -62,6 +63,10 @@ function Home() {
 
   return (
     <div className={styles.main}>
+      <Head>
+          <title>SALECKA - Le luxe à la portée de tous</title>
+          <img src='logo_black.png'/>
+        </Head>
       {isConnectionModal && <ModalConnection setIsConnectionModal={setIsConnectionModal} />}
       {isLoggedOut && <ModalLogoutMessage setIsLoggedOut={setIsLoggedOut} />}
       <div>

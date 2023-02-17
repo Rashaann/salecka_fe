@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 
 import Header from './Header';
@@ -140,8 +141,10 @@ export default function Men() {
     const articles = articlesList.map((el,i) => {
         const firstImg = el.image[0];
         let heartIcon = <FontAwesomeIcon icon={faHeart} size='sm' color='black' />
+        let smHeartIcon = <FontAwesomeIcon icon={faHeart} size='lg' color='black' />
         if (favs.some((e) => e.token === el.token)){
             heartIcon = <FaHeart size={20} color='black' />
+            smHeartIcon = <FaHeart size={25} color='black' />
         }
         
         const article = <div key={i} className={styles.artContainer}>
@@ -155,8 +158,8 @@ export default function Men() {
                 </div>
                 <div className={styles.lowerPart} onClick={() => handleClick(el)}>
                     <div className={styles.subLowerPart}>
+                        <p style={{fontSize:14}}>{el.name}</p>
                         <p style={{fontSize:14}}>{el.subname}</p>
-                        <p style={{fontSize:14}}>{el.type}</p>
                     </div>
 
                     <div className={styles.subLowerPart}>
@@ -167,26 +170,19 @@ export default function Men() {
         </div>
 
         const smArticle = <div key={i} className={styles.artContainer}>
-        <div className={styles.artSubContainer}>
-            <div style={{display:'flex', width:'69vw', height:'50vh', backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
-                <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
-                    {/* <FontAwesomeIcon icon={faHeart} size='s' color='black' /> */}
-                    {heartIcon}
+            <div className={styles.artSubContainer}>
+                <div style={{display:'flex', width:'48vw', height:'40vh', backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
+                    <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
+                        {smHeartIcon}
+                    </div>
                 </div>
-                {/* <img src={randomPic} width={200} height={240} style={{borderTopLeftRadius:10, borderTopRightRadius:10}}/> */}
-            </div>
-            <div className={styles.lowerPart} onClick={() => handleClick(el)}>
-                <div className={styles.subLowerPart}>
-                    <p className={styles.text}>{el.subname}</p>
-                    <p className={styles.text}>{el.type}</p>
-                </div>
-
-                <div className={styles.subLowerPart}>
-                    <p style={{fontSize:27}}>{el.price}€</p>
+                <div className={styles.lowerPart} onClick={() => handleClick(el)}>
+                    <p className={styles.text}><span style={{fontSize:25}}>{el.name}</span><br/>{el.subname}</p>
+                    <p className={styles.price}>{el.price}€</p>
                 </div>
             </div>
         </div>
-    </div>
+
 
         if (el.category === 'men' && (menuItem==='Tout' || menuItem==='') && screenWidth>900){
             return article
@@ -257,6 +253,11 @@ export default function Men() {
 
   return (
     <div>
+        <Head>
+          <title>Vêtements Homme</title>
+        </Head>
+
+
         {isConnectionModal && <ModalConnection setIsConnectionModal={setIsConnectionModal} />}
         {isArticleModal && <ModalArticle setIsArticleModal={setIsArticleModal} chosenArticle={chosenArticle} />}
         {isArtToFavs && <ModalFavsMessage setIsArtToFavs={setIsArtToFavs} />}
