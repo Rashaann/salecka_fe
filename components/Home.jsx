@@ -138,7 +138,7 @@ const handleClick = (el) => {
         </div>
       </div>)
     } else if (i===10){
-      return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></view>
+      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></div>
     }
   });
 
@@ -187,7 +187,7 @@ const handleClick = (el) => {
         </div>
       </div>)
     } else if (i===10){
-      return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></view>
+      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></div>
     }
   });
 
@@ -248,7 +248,7 @@ const dispArtByCat = (str) => {
         </div>)
       } else if (i===articlesList.length-1){
         console.log('IIIIII');
-        return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage(str)}>Découvrir plus d'articles</button></view>
+        return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage(str)}>Découvrir plus d'articles</button></div>
       }
     });
     return articles;
