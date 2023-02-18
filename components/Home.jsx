@@ -288,9 +288,9 @@ const dispArtByCat = (str) => {
         >
           
           <Slider style={{width:'100vw', height:'55vh',}}>
-            <Slide index={0}><img src='image1.jpeg' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/women')}/></Slide>
-            <Slide index={1}><img src='image2.png' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/men')} /></Slide>
-            <Slide index={2}><img src='image3.jpg' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/children')} /></Slide>
+            <Slide index={0}><img src='https://res.cloudinary.com/dldeqai4u/image/upload/v1676726575/image1_zbblh8.jpg' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/women')}/></Slide>
+            <Slide index={1}><img src='https://res.cloudinary.com/dldeqai4u/image/upload/v1676726580/image2_hnsq5d.png' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/men')} /></Slide>
+            <Slide index={2}><img src='https://res.cloudinary.com/dldeqai4u/image/upload/v1676726575/image3_m5p0a7.jpg' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/children')} /></Slide>
           </Slider>
           
           {/* <ButtonBack>Back</ButtonBack>
