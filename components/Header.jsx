@@ -33,6 +33,7 @@ export default function Header(props) {
 
   
   const user = useSelector((state) => state.salecka.value.user);
+  const cart = useSelector((state) => state.salecka.value.cart);
   const connectionStatus = useSelector((state) => state.salecka.value.isConnected);
 
 
@@ -70,10 +71,10 @@ export default function Header(props) {
     </Popover>
 
 
-  const beforeSmConnection = <p className={styles.beforeConnection} onClick={() => handleConnection()}><FontAwesomeIcon icon={faUser} size='sm' /></p>
+  const beforeSmConnection = <p className={styles.beforeConnection} onClick={() => handleConnection()}><FontAwesomeIcon icon={faUser} size='lg' /></p>
   const afterSmConnection = 
     <Popover placement="bottomRight" title={popoverTitle} content={popoverContent} className={styles.afterConnection} trigger="click">
-      <FontAwesomeIcon icon={faUser} size='sm' />
+      <FontAwesomeIcon icon={faUser} size='lg' />
     </Popover>
 
 
@@ -96,13 +97,30 @@ export default function Header(props) {
         <div className={styles.container}>
             {screenWidth<=600?
             <div style={{display:'flex', justifyContent:'center', alignItems:'center',}}>
-              <Link href='/favs' style={{textDecoration: 'none',}}><a style={{display:'flex', justifyContent:'center', textDecoration: 'none', color:'white', width:44}}><FontAwesomeIcon icon={faHeart} size='sm' /></a></Link>
-              <Link href='/cart' style={{textDecoration: 'none',}}><a style={{display:'flex', justifyContent:'center', textDecoration: 'none', color:'white', width:44}}><AiOutlineShoppingCart size={22} /></a></Link>
+              <Link href='/favs' style={{textDecoration: 'none',}}><a style={{display:'flex', justifyContent:'center', textDecoration: 'none', color:'white', width:60}}><FontAwesomeIcon icon={faHeart} size='lg' /></a></Link>
+              <Link href='/cart' style={{textDecoration: 'none',}}>
+                <a style={{display:'flex', justifyContent:'center', textDecoration: 'none', color:'white', width:60}}>
+                  <AiOutlineShoppingCart size={33} />
+                  {cart.length===0?<></>:<div style={{display:'flex', justifyContent:'center', alignItems:'center', borderRadius:20, width:20, height:20, backgroundColor:'white', color: 'black', fontSize:11,  marginRight:-10, marginTop:-5}}>
+                    {cart.length}</div>}
+                </a>
+              </Link>
               {!(connectionStatus)?beforeSmConnection:afterSmConnection}
             </div>:
             <div style={{display:'flex', justifyContent:'center', alignItems:'center',}}>
               <Link href='/favs' style={{textDecoration: 'none',}}><a style={{textDecoration: 'none', color:'black'}}><p className={styles.favs}><FontAwesomeIcon icon={faHeart} size='sm' />Favoris</p></a></Link>
-              <Link href='/cart' style={{textDecoration: 'none',}}><a style={{textDecoration: 'none', color:'black'}}><p className={styles.cart}><AiOutlineShoppingCart size={22} />Panier</p></a></Link>
+              <Link href='/cart' style={{textDecoration: 'none',}}>
+                <a style={{textDecoration: 'none', color:'black'}}>
+                  <p className={styles.cart}>
+                    <div style={{width:22, height:22,}}>
+                    <AiOutlineShoppingCart size={22} />
+                      {cart.length===0?<></>:<div style={{display:'flex', justifyContent:'center', alignItems:'center', borderRadius:20, width:15, backgroundColor:'white', color: 'black', fontSize:11,  marginLeft:15, marginTop:-34}}>
+                      {cart.length}</div>}
+                    </div>
+                    Panier
+                  </p>
+                </a>
+              </Link>
               {!(connectionStatus)?beforeConnection:afterConnection}
             </div>}
             

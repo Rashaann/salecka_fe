@@ -162,7 +162,6 @@ const handleClick = (el) => {
           <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
             
             <div className={styles.artInfosContent}>
-            <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
               <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
             </div>
 
@@ -205,7 +204,7 @@ const dispArtByCat = (str) => {
         }
 
 
-      if(el.category === str){
+      if(el.category === str && i < 15){
         return(<div key={i} className={styles.artSubContainer}>
           <div className={styles.artContent}>
             <div style={{display:'flex', width:'auto', height:'40vh', backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
@@ -216,7 +215,6 @@ const dispArtByCat = (str) => {
             <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
               
               <div className={styles.artInfosContent}>
-              <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
                 <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
               </div>
   
@@ -226,7 +224,7 @@ const dispArtByCat = (str) => {
             </div>
           </div>
         </div>)
-      } else if (el.category==='men' && i===articlesList.length-1){
+      } else if (i===articlesList.length-1){
         console.log('IIIIII');
         return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage(str)}>Découvrir plus d'articles</button></view>
       }
