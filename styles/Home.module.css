@@ -76,14 +76,14 @@
     display: flex;
     flex-direction:column;
     width:250px;
-    height:55vh;
+    height:65vh;
     border-radius:10px;
   }
   .artContent:hover{
     display: flex;
     flex-direction:column;
     width:250px;
-    height:55vh;
+    height:65vh;
     border-radius:10px;
     box-shadow: 5px 5px 5px gray;
   }
@@ -136,8 +136,8 @@
   .container {
     /* background-color:orange; */
     width:100vw;
-    height:80vh;
-    overflow-y: scroll;
+    min-height:80vh;
+    /* overflow-y: scroll; */
   }
   
   
@@ -185,7 +185,7 @@
     width:250px;
     height:200px;
     border-radius:10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
 
   .image{
@@ -231,10 +231,8 @@
     width:100vw;
   }
   .container {
-    /* background-color:pink; */
     width:100vw;
-    height:80vh;
-    overflow-y: scroll;
+    min-height:80vh;
   }
 
 
@@ -260,7 +258,7 @@
   .artContainer{
     display:flex;
     width:100vw;
-    height:250px;
+    height:65vh;
     overflow-x: scroll;
     padding:10px;
   }
@@ -269,25 +267,47 @@
 
 
   .artSubContainer{
-    width:270px;
-    height:200px;
+    display: flex;
+    flex-direction:column;
+    width:300px;
+    height:57vh;
+    border-radius:10px;
     padding-left:30px;
     padding-right:30px;
   }
+  
+
+  .heartIcon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    background-color:white;
+    border-radius:20px;
+}
 
   .artContent{
     display: flex;
     flex-direction:column;
-    width:210px;
-    height:160px;
+    width:250px;
+    height:65vh;
     border-radius:10px;
-    border: 1px solid black;
+  }
+  .artContent:hover{
+    display: flex;
+    flex-direction:column;
+    width:250px;
+    height:65vh;
+    border-radius:10px;
+    box-shadow: 5px 5px 5px gray;
   }
 
   .image{
     display:flex;
-    width:210px;
-    height:100px;
+    width:250px;
+    height:140px;
     background-color:gray;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
@@ -297,14 +317,15 @@
 
   .artInfosContainer{
     display:flex;
-    height:50px;
+    height:60px;
     justify-content:space-around;
     align-items:center;
+    cursor: pointer;
   }
 
   .artInfosContent{
     width:90px;
-    height:55px;
+    height:60px;
   }
   .artText {
     font-size:14px;
@@ -327,10 +348,8 @@
     width:100vw;
   }
   .container {
-    /* background-color:purple; */
     width:100vw;
-    height:75vh;
-    overflow-y: scroll;
+    min-height:75vh;
   }
   
 
@@ -354,10 +373,11 @@
     font-size:28px;
   }
   
+
   .artContainer{
     display:flex;
     width:100vw;
-    height:200px;
+    height:65vh;
     overflow-x: scroll;
     padding:10px;
   }
@@ -366,25 +386,47 @@
 
 
   .artSubContainer{
-    width:240px;
-    height:170px;
+    display: flex;
+    flex-direction:column;
+    width:300px;
+    height:57vh;
+    border-radius:10px;
     padding-left:30px;
     padding-right:30px;
   }
+  
+
+  .heartIcon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    background-color:white;
+    border-radius:20px;
+}
 
   .artContent{
     display: flex;
     flex-direction:column;
-    width:190px;
-    height:140px;
+    width:250px;
+    height:65vh;
     border-radius:10px;
-    border: 1px solid black;
+  }
+  .artContent:hover{
+    display: flex;
+    flex-direction:column;
+    width:250px;
+    height:65vh;
+    border-radius:10px;
+    box-shadow: 5px 5px 5px gray;
   }
 
   .image{
     display:flex;
-    width:190px;
-    height:80px;
+    width:250px;
+    height:140px;
     background-color:gray;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
@@ -394,14 +436,15 @@
 
   .artInfosContainer{
     display:flex;
-    height:50px;
+    height:60px;
     justify-content:space-around;
     align-items:center;
+    cursor: pointer;
   }
 
   .artInfosContent{
     width:90px;
-    height:55px;
+    height:60px;
   }
   .artText {
     font-size:14px;

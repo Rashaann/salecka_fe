@@ -136,6 +136,14 @@ export default function Children() {
             smHeartIcon = <FaHeart size={25} color='black' />
         }
         
+        const today = new Date();
+        const artDate = new Date(el.creation);
+        let newMessage = <></>
+        if((today.getDate() - artDate.getDate()) <= 6){
+          newMessage = <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+        }
+
+
         const article = <div key={i} className={styles.artContainer}>
             <div className={styles.artSubContainer}>
                 <div style={{display:'flex', width:'auto', height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
@@ -147,6 +155,7 @@ export default function Children() {
                 </div>
                 <div className={styles.lowerPart} onClick={() => handleClick(el)}>
                     <div className={styles.subLowerPart}>
+                        {newMessage}
                         <p style={{fontSize:14}}>{el.name}</p>
                         <p style={{fontSize:14}}>{el.subname}</p>
                     </div>

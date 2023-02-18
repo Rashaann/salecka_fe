@@ -108,19 +108,26 @@ const handleClick = (el) => {
           heartIcon = <FaHeart size={20} color='black' />
           smHeartIcon = <FaHeart size={25} color='black' />
       }
+
+      const today = new Date();
+      const artDate = new Date(el.creation);
+      let newMessage = <></>
+      if((today.getDate() - artDate.getDate()) <= 6){
+        newMessage = <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+      }
         
     if(i<10){
       return(<div key={i} className={styles.artSubContainer}>
         <div className={styles.artContent}>
           <div style={{display:'flex', width:'auto', height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
             <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
-              {heartIcon}
+              {screenWidth<=600?smHeartIcon:heartIcon}
             </div>
           </div>
           <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
             
             <div className={styles.artInfosContent}>
-            <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+              {newMessage}
               <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
             </div>
 
@@ -150,18 +157,26 @@ const handleClick = (el) => {
           heartIcon = <FaHeart size={20} color='black' />
           smHeartIcon = <FaHeart size={25} color='black' />
       }
+
+      const today = new Date();
+      const artDate = new Date(el.creation);
+      let newMessage = <></>
+      if((today.getDate() - artDate.getDate()) <= 6){
+        newMessage = <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+      }
         
     if(i<10){
       return(<div key={i} className={styles.artSubContainer}>
         <div className={styles.artContent}>
           <div style={{display:'flex', width:'auto', height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
             <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
-              {heartIcon}
+              {screenWidth<=600?smHeartIcon:heartIcon}
             </div>
           </div>
           <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
             
             <div className={styles.artInfosContent}>
+              {newMessage}
               <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
             </div>
 
@@ -203,18 +218,25 @@ const dispArtByCat = (str) => {
             smHeartIcon = <FaHeart size={25} color='black' />
         }
 
+        const today = new Date();
+        const artDate = new Date(el.creation);
+        let newMessage = <></>
+        if((today.getDate() - artDate.getDate()) <= 10){
+          newMessage = <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+        }
 
       if(el.category === str && i < 15){
         return(<div key={i} className={styles.artSubContainer}>
           <div className={styles.artContent}>
-            <div style={{display:'flex', width:'auto', height:'40vh', backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
+            <div style={{display:'flex', width:'auto', height:290, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
               <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
-                {heartIcon}
+                {screenWidth<=600?smHeartIcon:heartIcon}
               </div>
             </div>
             <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
               
               <div className={styles.artInfosContent}>
+                {newMessage}
                 <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
               </div>
   
@@ -256,6 +278,24 @@ const dispArtByCat = (str) => {
 
       <div className={styles.container}>
         
+        {screenWidth<=600?
+        <CarouselProvider
+          naturalSlideWidth={screenWidth}
+          naturalSlideHeight={screenHeight/2}
+          interval={5000}
+          isPlaying={true}
+          totalSlides={3}
+        >
+          
+          <Slider style={{width:'100vw', height:'55vh',}}>
+            <Slide index={0}><img src='image1.jpeg' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/women')}/></Slide>
+            <Slide index={1}><img src='image2.png' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/men')} /></Slide>
+            <Slide index={2}><img src='image3.jpg' width={screenWidth} height={screenHeight/2} style={{cursor:'pointer'}} onClick = {() => Router.push('/children')} /></Slide>
+          </Slider>
+          
+          {/* <ButtonBack>Back</ButtonBack>
+          <ButtonNext>Next</ButtonNext> */}
+        </CarouselProvider>:
         <CarouselProvider
           naturalSlideWidth={screenWidth}
           naturalSlideHeight={screenHeight}
@@ -263,16 +303,12 @@ const dispArtByCat = (str) => {
           isPlaying={true}
           totalSlides={3}
         >
-          
           <Slider style={{width:'100vw', height:'90vh',}}>
             <Slide index={0}><img src='image1.jpeg' width={screenWidth} height={screenHeight} style={{cursor:'pointer'}} onClick = {() => Router.push('/women')}/></Slide>
             <Slide index={1}><img src='image2.png' width={screenWidth} height={screenHeight} style={{cursor:'pointer'}} onClick = {() => Router.push('/men')} /></Slide>
             <Slide index={2}><img src='image3.jpg' width={screenWidth} height={screenHeight} style={{cursor:'pointer'}} onClick = {() => Router.push('/children')} /></Slide>
           </Slider>
-          
-          {/* <ButtonBack>Back</ButtonBack>
-          <ButtonNext>Next</ButtonNext> */}
-        </CarouselProvider>
+        </CarouselProvider>}
 
         <div className={styles.introContainer}>
           <p className={styles.textIntro}>
