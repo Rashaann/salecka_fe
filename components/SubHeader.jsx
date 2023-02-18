@@ -4,6 +4,7 @@ import styles from '../styles/SubHeader.module.css';
 import Link from 'next/link';
 
 import { BsSearch } from 'react-icons/bs';
+import { AiOutlineMenu } from 'react-icons/ai';
 import { Popover, Button } from 'antd';
 
 
@@ -48,6 +49,7 @@ export default function SubHeader() {
 
 
   //DISPLAY SEARCH BAR REGARDING THE DEVICE'S SIZE
+  //Big screen devices
   const searchBar = <div style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
   <div className={styles.searchIcon}><BsSearch size={20} /></div>
   <input type='text' placeholder='Recherche' onChange={(e) => setSearch(e.target.value)} value={search}
@@ -56,6 +58,10 @@ export default function SubHeader() {
     />
   </div>
 
+
+  //Small screen devices
+  const searchBarSm = <div className={styles.searchIcon} onClick={() => setShowSearchBar(!showSearchBar)}><BsSearch size={25} /></div>
+  
 
 
 
@@ -79,11 +85,10 @@ export default function SubHeader() {
       <Link href='/mixte' style={{textDecoration: 'none',}}><a style={{textDecoration: 'none', color:'black'}}><p style={{cursor:'pointer'}}>Mixte</p></a></Link>
       <Link href='/children' style={{textDecoration: 'none',}}><a style={{textDecoration: 'none', color:'black'}}><p style={{cursor:'pointer'}}>Enfant</p></a></Link>
       <Link href='/promotions' style={{textDecoration: 'none',}}><a style={{textDecoration: 'none', color:'black'}}><p style={{cursor:'pointer'}}>Promotions</p></a></Link>
-      {searchBar}
     </div>
   );
     
-  const categoriesSmSize = <div className={styles.categories} onClick={() => setShowCategories(!showCategories)}>Catégories</div>
+  const categoriesSmSize = <div className={styles.categories} onClick={() => setShowCategories(!showCategories)}><AiOutlineMenu size={25} /></div>
 
   
 
@@ -96,7 +101,7 @@ export default function SubHeader() {
         {screenWidth<=600?categoriesSmSize:categories}
 
 
-        {screenWidth<=600?<></>:searchBar}
+        {screenWidth<=600?searchBarSm:searchBar}
         {showSearchBar && <input type='text' placeholder='Recherche' onChange={(e) => setSearch(e.target.value)} value={search}
           className={styles.input}
           onKeyDown={(e) => handleKeyPress(e)}

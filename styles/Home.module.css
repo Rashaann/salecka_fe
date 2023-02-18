@@ -44,6 +44,7 @@
     width:100vw;
     height:65vh;
     overflow-x: scroll;
+    overflow-y: none;
     padding:10px;
   }
 
@@ -168,6 +169,7 @@
     width:100vw;
     height:300px;
     overflow-x: scroll;
+    overflow-y: none;
     padding:10px;
   }
 
@@ -228,7 +230,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    width:100vw;
+    width:480px;
   }
   .container {
     width:100vw;
@@ -260,6 +262,7 @@
     width:100vw;
     height:65vh;
     overflow-x: scroll;
+    overflow-y: none;
     padding:10px;
   }
 
@@ -346,6 +349,8 @@
     align-items: center;
     min-height: 100vh;
     width:100vw;
+    padding: 0px;
+    margin: 0px;
   }
   .container {
     width:100vw;
@@ -356,7 +361,7 @@
 
   .introContainer {
     display:flex;
-    height:150px;
+    height:180px;
     justify-content:center;
     align-items:center;
   }
@@ -379,6 +384,7 @@
     width:100vw;
     height:65vh;
     overflow-x: scroll;
+    overflow-y: none;
     padding:10px;
   }
 
