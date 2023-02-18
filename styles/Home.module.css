@@ -41,26 +41,50 @@
   .artContainer{
     display:flex;
     width:100vw;
-    height:300px;
+    height:65vh;
     overflow-x: scroll;
     padding:10px;
   }
 
 
 
+
   .artSubContainer{
-    width:310px;
+    display: flex;
+    flex-direction:column;
+    width:300px;
+    height:57vh;
+    border-radius:10px;
     padding-left:30px;
     padding-right:30px;
   }
+  
+
+  .heartIcon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    background-color:white;
+    border-radius:20px;
+}
 
   .artContent{
     display: flex;
     flex-direction:column;
     width:250px;
-    height:200px;
+    height:55vh;
     border-radius:10px;
-    border: 1px solid black;
+  }
+  .artContent:hover{
+    display: flex;
+    flex-direction:column;
+    width:250px;
+    height:55vh;
+    border-radius:10px;
+    box-shadow: 5px 5px 5px gray;
   }
 
   .image{
@@ -79,6 +103,7 @@
     height:60px;
     justify-content:space-around;
     align-items:center;
+    cursor: pointer;
   }
 
   .artInfosContent{

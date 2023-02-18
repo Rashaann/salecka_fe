@@ -1,66 +1,242 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
-import styles from '../styles/Home.module.css';
-
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
+import React, { useState, useEffect } from 'react';
 
 import Header from './Header';
 import SubHeader from './SubHeader';
 import Footer from './Footer';
 import ModalConnection from './ModalConnection';
+import ModalFavsMessage from './ModalFavsMessage';
 import ModalLogoutMessage from './ModalLogoutMessage';
-import Router from 'next/router';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faHeart, faGear } from '@fortawesome/free-regular-svg-icons';
+import {FaHeart} from 'react-icons/fa';
+
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { addDataArticle, addFavsData, removeFavsData, addCartsData } from '../reducers/salecka';
+import Router from "next/router";
+
+import styles from '../styles/Home.module.css';
 
 
 function Home() {
-  const [isConnectionModal, setIsConnectionModal] = useState(false);
-  const [isLoggedOut, setIsLoggedOut] = useState(false);
+  const [articlesList, setArticlesList] = useState([]);
+
+    const [isConnectionModal, setIsConnectionModal] = useState(false);
+    const [isArticleModal, setIsArticleModal] = useState(false);
+    const [isArtToFavs, setIsArtToFavs] = useState(false);
+    const [isLoggedOut, setIsLoggedOut] = useState(false);
 
   const [screenHeight, setScreenHeight] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
 
-
+  const dispatch = useDispatch();
+  const favs = useSelector((state) => state.salecka.value.favs);
+  const isConnected = useSelector((state)=> state.salecka.value.isConnected);
 
   useEffect(() => {
     // window is accessible here.
     setScreenWidth(window.innerWidth);
     setScreenHeight(window.innerHeight);
     console.log("window.innerHeight", window.innerWidth);
+    fetch(`https://salecka-be-2me8.vercel.app/articles/`)
+      .then(response => response.json())
+      .then(data => {
+          setArticlesList(data.articles);
+      })
   }, [screenWidth]);
 
 
+
+
+  const favsMessage = () => {
+    setIsArtToFavs(true);
+        setTimeout(() => {
+            setIsArtToFavs(false);
+        }, 2000);
+  }
+
+
+  //DISPLAY CONFIRMATION MESSAGE OF SUCCESSFULL LOGOUT
   if(isLoggedOut){
     setTimeout(()=>{
       setIsLoggedOut(false);
     },2000);
-  };
+  }
+
+  const addToFavs = (el) => {
+    if(isConnected){
+        console.log('ELEMENT => ', el);
+        if(favs.some((e) => e.token === el.token)){
+            dispatch(removeFavsData(el));
+            console.log('ARTICLE REMOVED.');
+            console.log(favs);
+        } else {
+            dispatch(addFavsData(el));
+            favsMessage();
+            console.log('ARTICLE ADDED.');
+        }
+    } else {
+        setIsConnectionModal(true);
+    }
+}
+
+
+const handleClick = (el) => {
+    dispatch(addDataArticle(el));
+    Router.push('/article');
+}
 
 
 
-  const articles = [];
 
-  for(let i = 0; i<30; i++){
-    articles.push(<div key={i} className={styles.artSubContainer}>
 
-      <div className={styles.artContent}>
-        <div className={styles.image}>Photo</div>
-        <div className={styles.artInfosContainer}>
-          <div className={styles.artInfosContent}>
-            <p className={styles.artText}>Article</p>
-            <p className={styles.artText}>Catégorie</p>
+
+
+  //DISPLAY ARTICLES BY THEIR ADDED DATE
+  const newArticles = articlesList.sort((a,b) => {
+    return new Date(b.creation) - new Date(a.creation)})
+    .map((el,i) => {
+    
+      const firstImg = el.image[0];
+      let heartIcon = <FontAwesomeIcon icon={faHeart} size='sm' color='black' />
+      let smHeartIcon = <FontAwesomeIcon icon={faHeart} size='lg' color='black' />
+      if (favs.some((e) => e.token === el.token)){
+          heartIcon = <FaHeart size={20} color='black' />
+          smHeartIcon = <FaHeart size={25} color='black' />
+      }
+        
+    if(i<10){
+      return(<div key={i} className={styles.artSubContainer}>
+        <div className={styles.artContent}>
+          <div style={{display:'flex', width:'auto', height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
+            <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
+              {heartIcon}
+            </div>
           </div>
+          <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
+            
+            <div className={styles.artInfosContent}>
+            <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+              <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
+            </div>
 
-          <div className={styles.artInfosContent}>
-            <p>Prix</p>
+            <div className={styles.artInfosContent}>
+              <p>{el.price}€</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>)
+      </div>)
+    } else if (i===10){
+      return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></view>
+    }
+  });
+
+
+
+
+  //DISPLAY ARTICLES BY POPULARITY
+  const popularArticles = articlesList.sort((a,b) => {
+    return b.popularity.length - a.popularity.length})
+    .map((el,i) => {
+    
+      const firstImg = el.image[0];
+      let heartIcon = <FontAwesomeIcon icon={faHeart} size='sm' color='black' />
+      let smHeartIcon = <FontAwesomeIcon icon={faHeart} size='lg' color='black' />
+      if (favs.some((e) => e.token === el.token)){
+          heartIcon = <FaHeart size={20} color='black' />
+          smHeartIcon = <FaHeart size={25} color='black' />
+      }
+        
+    if(i<10){
+      return(<div key={i} className={styles.artSubContainer}>
+        <div className={styles.artContent}>
+          <div style={{display:'flex', width:'auto', height:240, backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
+            <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
+              {heartIcon}
+            </div>
+          </div>
+          <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
+            
+            <div className={styles.artInfosContent}>
+            <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+              <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
+            </div>
+
+            <div className={styles.artInfosContent}>
+              <p>{el.price}€</p>
+            </div>
+          </div>
+        </div>
+      </div>)
+    } else if (i===10){
+      return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></view>
+    }
+  });
+
+
+
+
+
+
+  //DISPLAY ARTICLES BY CATEGORY
+
+
+  const goToPage = (page) => {
+    Router.push(`/${page}`)
   }
+
+
+
+const dispArtByCat = (str) => {
+  const articles = articlesList.sort((a,b) => {
+      return new Date(b.creation) - new Date(a.creation)})
+      .map((el,i) => {
+      
+        const firstImg = el.image[0];
+        let heartIcon = <FontAwesomeIcon icon={faHeart} size='sm' color='black' />
+        let smHeartIcon = <FontAwesomeIcon icon={faHeart} size='lg' color='black' />
+        if (favs.some((e) => e.token === el.token)){
+            heartIcon = <FaHeart size={20} color='black' />
+            smHeartIcon = <FaHeart size={25} color='black' />
+        }
+
+
+      if(el.category === str){
+        return(<div key={i} className={styles.artSubContainer}>
+          <div className={styles.artContent}>
+            <div style={{display:'flex', width:'auto', height:'40vh', backgroundColor:'gray', borderTopLeftRadius:10, borderTopRightRadius:10, justifyContent:'flex-end', alignItems:'flex-start', backgroundImage:"url(" + firstImg + ")", backgroundSize: 'cover',}}>
+              <div className={styles.heartIcon} onClick={() => addToFavs(el)}>
+                {heartIcon}
+              </div>
+            </div>
+            <div className={styles.artInfosContainer} onClick={() => handleClick(el)}>
+              
+              <div className={styles.artInfosContent}>
+              <p style={{color:'gray', fontSize:12}}>Nouveauté</p>
+                <p className={styles.artText}><span style={{fontSize:18}}>{el.name}</span> - {el.subname}</p>
+              </div>
+  
+              <div className={styles.artInfosContent}>
+                <p>{el.price}€</p>
+              </div>
+            </div>
+          </div>
+        </div>)
+      } else if (el.category==='men' && i===articlesList.length-1){
+        console.log('IIIIII');
+        return <view style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage(str)}>Découvrir plus d'articles</button></view>
+      }
+    });
+    return articles;
+  }
+
+  let womenArt = dispArtByCat('women');
+  let menArt = dispArtByCat('men');
+  let childrenArt = dispArtByCat('children');
 
   return (
     <div className={styles.main}>
@@ -110,21 +286,35 @@ function Home() {
         <div>
           <h1 className={styles.section}>Dernières sorties</h1>
           <div className={styles.artContainer}>
-            {articles}
+            {newArticles}
           </div>
         </div>
         
         <div>
           <h1 className={styles.section}>Meilleures ventes</h1>
           <div className={styles.artContainer}>
-            {articles}
+            {popularArticles}
           </div>
         </div>
 
         <div>
-          <h1 className={styles.section}>Promotions</h1>
+          <h1 className={styles.section}>Femme</h1>
           <div className={styles.artContainer}>
-            {articles}
+            {womenArt}
+          </div>
+        </div>
+
+        <div>
+          <h1 className={styles.section}>Homme</h1>
+          <div className={styles.artContainer}>
+            {menArt}
+          </div>
+        </div>
+
+        <div>
+          <h1 className={styles.section}>Enfant</h1>
+          <div className={styles.artContainer}>
+            {childrenArt}
           </div>
         </div>
       </div>
