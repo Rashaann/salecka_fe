@@ -1,15 +1,301 @@
-.body{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
-    min-height:100vh;
+@media only screen and (min-width: 900px){
+    /*Computers & Tablets [901px -> 1200px]*/
+    .body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        min-height:100vh;
+    }
+    
+    
+    .noArticles{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:70vh;
+    }
+    
+    .addedArticles{
+        display:flex;
+        flex-direction:column;
+        width:95vw;
+        height:90vh;
+        padding:20px;
+    }
+    
+    .container{
+        display:flex;
+        flex-direction:column;
+        width:95vw;
+        height:75vh;
+        padding:20px;
+        overflow-y:scroll;
+    }
+    
+    .totalContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        width:95vw;
+        height:25vh;
+        padding:20px;
+        border-top:1px solid black;
+    }
+    
+    .btn{
+        color:white;
+        background-color:black;
+        border-width:1.5px;
+        border-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+    
+    
+    
+    
+    .artBody{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:90vw;
+        height:200px;
+        padding-left:30px;
+        padding-right:30px;
+    }
+    
+    .artContainer{
+        display:flex;
+        width:80vw;
+        height:150px;
+        border-radius:10px;
+        border:1px solid black;
+    }
+    
+    .heartIconContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        width:30px;
+        height:30px;
+    }
+    
+    .infoContainer{
+        display:flex;
+        height:150px;
+        justify-content:space-around;
+        align-items:center;
+    }
+    
+    .infoSubContainer{
+        width:50vw;
+        height:150px;
+        cursor:pointer;
+        padding-left:30px;
+    }
+    
+    .qtyContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:15vw;
+        height:150px;
+    }
+    
+    .qtyLeftBtn{
+        background-color:black;
+        color:white;
+        height:40px;
+        width:35px;
+        border-width:1px;
+        border-top-left-radius:20px;
+        border-bottom-left-radius:20px;
+        font-size:20px;
+        cursor:pointer;
+    }
+    .qtyRightBtn{
+        background-color:black;
+        color:white;
+        height:40px;
+        width:35px;
+        border-width:1px;
+        border-top-right-radius:20px;
+        border-bottom-right-radius:20px;
+        font-size:20px;
+        cursor:pointer;
+    }
+    
+    .qty{
+        border-width:0px;
+        width:45px;
+        height:40px;
+        font-size:15px;
+        padding:10px;
+        font-family:'Barlow Condensed';
+    }
+    
+    .total{
+        width:5vw;
+        height:150px;
+    }
 }
 
 
-.noArticles{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:70vh;
+@media only screen and (max-width: 900px){
+    /*Big & Small smartphones [426px -> 900px]*/
+    .body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        min-height:100vh;
+    }
+    
+    
+    .noArticles{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:70vh;
+    }
+    
+    .addedArticles{
+        display:flex;
+        flex-direction:column;
+        width:100vw;
+        min-height:90vh;
+    }
+    
+    .container{
+        display:flex;
+        flex-direction:column;
+        width:100vw;
+        min-height:75vh;
+    }
+    
+    .totalContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        width:95vw;
+        height:25vh;
+        padding:20px;
+        border-top:1px solid black;
+    }
+    
+    .btn{
+        color:white;
+        background-color:black;
+        border-width:1.5px;
+        border-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+    
+    
+    
+    
+    .artBody{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100vw;
+        height:50vh;
+    }
+    
+    .artContainer{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:85vw;
+        height:45vh;
+        border-bottom:1px solid black;
+    }
+    
+    .heartIconContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        width:30px;
+        height:30px;
+    }
+    
+    .infoContainer{
+        display:flex;
+        flex-direction: column;
+        height:200px;
+        justify-content:space-around;
+        align-items:center;
+    }
+    
+    .infoSubContainer{
+        width:50vw;
+        height:25vh;
+        cursor:pointer;
+        padding-left:20px;
+    }
+    
+    .qtyContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:50vw;
+        height:8vh;
+    }
+    
+    .qtyLeftBtn{
+        background-color:black;
+        color:white;
+        height:40px;
+        width:35px;
+        border-width:1px;
+        border-top-left-radius:20px;
+        border-bottom-left-radius:20px;
+        font-size:20px;
+        cursor:pointer;
+    }
+
+    .qtyRightBtn{
+        background-color:black;
+        color:white;
+        height:40px;
+        width:35px;
+        border-width:1px;
+        border-top-right-radius:20px;
+        border-bottom-right-radius:20px;
+        font-size:20px;
+        cursor:pointer;
+    }
+    
+    .qty{
+        border-width:0px;
+        width:45px;
+        height:40px;
+        font-size:15px;
+        padding:10px;
+        font-family:'Barlow Condensed';
+    }
+    
+    .total{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:50vw;
+        height:10vh;
+    }
 }
+
+

@@ -27,13 +27,13 @@ export default function ModalCartConfirmation(props) {
 
             <div style={{display:'flex', justifyContent:'space-around', alignItems:'center', width:500, height:125}}>
                 <button
-                    style={{color:'black', backgroundColor:'white', borderWidth:1, borderColor:'white', borderRadius:20, fontSize:20, fontFamily:'DIN Condensed', width:150, height:35, cursor:'pointer'}}
+                    style={{color:'black', backgroundColor:'white', borderWidth:1, borderColor:'white', borderRadius:20, fontSize:20, fontFamily:'Barlow Condensed', width:150, height:35, cursor:'pointer'}}
                     onClick={() => props.setIsCartConfModal(false)}
                 >
                     Retour
                 </button>
                 <button
-                    style={{color:'gray', backgroundColor:'white', borderWidth:1, borderColor:'white', borderRadius:20, fontSize:20, fontFamily:'DIN Condensed', width:150, height:35, cursor:'pointer'}}
+                    style={{color:'gray', backgroundColor:'white', borderWidth:1, borderColor:'white', borderRadius:20, fontSize:20, fontFamily:'Barlow Condensed', width:150, height:35, cursor:'pointer'}}
                     onClick={() => handleDeletion()}
                 >
                     Confirmer

@@ -32,7 +32,7 @@
     border-radius:10px;
     font-size:16px;
     padding-left:10px;
-    font-family:'DIN Condensed';
+    font-family:'Barlow Condensed';
 }
 
 .inputError {
@@ -44,7 +44,7 @@
     border-radius:10px;
     font-size:16px;
     padding-left:10px;
-    font-family:'DIN Condensed';
+    font-family:'Barlow Condensed';
 }
 
 .btn {
@@ -52,7 +52,7 @@
     border: 1.5px solid black;
     border-radius:20px;
     font-size:20px;
-    font-family:'DIN Condensed';
+    font-family:'Barlow Condensed';
     width:150px;
     height:35px;
     cursor: pointer;

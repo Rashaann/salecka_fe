@@ -9,12 +9,18 @@ import ModalArticle from './ModalArticle';
 import ModalCartMessage from './ModalCartMessage';
 
 import { addCartsData } from '../reducers/salecka';
+import { Carousel } from 'antd';
 
 
+import styles from '../styles/Article.module.css';
 
 
 
 export default function Article() {
+    const [screenWidth, setScreenWidth] = useState(0);
+    const [screenHeight, setScreenHeight] = useState(0);
+
+
     const [isConnectionModal, setIsConnectionModal] = useState(false);
     const [isArticleModal, setIsArticleModal] = useState(false);
 
@@ -33,11 +39,12 @@ export default function Article() {
         const query = new URLSearchParams(window.location.search);
         if (query.get('success')) {
           console.log('Order placed! You will receive an email confirmation.');
-        }
-    
-        if (query.get('canceled')) {
+        } else if (query.get('canceled')) {
           console.log('Order canceled -- continue to shop around and checkout when you’re ready.');
         }
+
+        setScreenWidth(window.innerWidth);
+        setScreenHeight(window.innerHeight);
     }, []);
 
 
@@ -68,10 +75,25 @@ export default function Article() {
         return(<div key={i} style={{cursor:'pointer'}} onClick={() => changeFirstPic(el)}>
             <img src={el} style={{width:180}}  alt={`${article.name} - ${article.subname}`}/>
         </div>)
-    })
+    });
 
+    const smPics = article.image.map((el,i) => {
+        return(<div key={i} style={{cursor:'pointer', backgroundColor:'red', width:'100vw', height:'50vh'}}>
+            <img src={el} style={{width:'100vw'}}  alt={`${article.name} - ${article.subname}`}/>
+        </div>)
+    })
+    const contentStyle = {
+        margin: 0,
+        height: '160px',
+        color: '#fff',
+        lineHeight: '160px',
+        textAlign: 'center',
+        background: '#364d79',
+      };
+
+    
   return (
-    <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center', minHeight:'100vh'}}>
+    <div className={styles.body}>
         {isConnectionModal && <ModalConnection setIsConnectionModal={setIsConnectionModal} />}
         {isArticleModal && <ModalArticle setIsArticleModal={setIsArticleModal} images={article.image}/>}
         {isArtToCart && <ModalCartMessage setIsArtToCart={setIsArtToCart} />}
@@ -83,41 +105,47 @@ export default function Article() {
 
 
 
-        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center',width:'90vw',}}>
-                <div style={{display:'flex', width:'35vw', flexDirection:'column', alignItems:'center', overflowY: 'scroll', height:450}}>
+        {screenWidth<=900?
+        <Carousel style={{width:'100vw', height:'80vh', color:'black'}}>
+            {smPics}
+        </Carousel>:
+        <div className={styles.imgContainer}>
+                <div className={styles.leftImgSubContainer}>
                     {pics}
                 </div>
-                <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'55vw', cursor:'pointer'}} onClick={() => setIsArticleModal(true)}>
-                    <img src={firstPic} style={{width:300}} alt={`${article.name} - ${article.subname}`}/>
+                <div className={styles.rightImgSubContainer} onClick={() => setIsArticleModal(true)}>
+                    <img src={firstPic} className={styles.centralPic} alt={`${article.name} - ${article.subname}`}/>
                 </div>
-        </div>
+        </div>}
 
-        <div style={{display:'flex', flexDirection:'column', width:'90vw', paddingLeft:20,}}>
-            <div style={{display:'flex', justifyContent:'space-around', alignItems:'center', height:300, borderTop: `1px solid black`}}>
-                <p style={{fontFamily:'DIN condensed', fontSize:25}}>{article.name} - {article.subname} </p>
-                <p style={{fontFamily:'DIN condensed', fontSize:45}}>{article.price}€</p>
+        <div className={styles.infoContainer}>
+            <div className={styles.globalInfosSubContainer}>
+                <p className={styles.name}>{article.name} - {article.subname} </p>
+                <p className={styles.price}>{article.price}€</p>
             </div>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>DESCRIPTION: </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, fontWeight:'lighter', color:'gray'}}>{article.description}</p>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>COMPOSITION: </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.composition}</p>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>CONSEIL D'ENTRETIEN: </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.advice}</p>
-            <p style={{fontFamily:'DIN condensed', fontSize:25}}>IDENTIFIANT(S): </p><br/><p style={{fontFamily:'DIN condensed', fontSize:20, color:'gray'}}>{article.ids}</p>
-            <div style={{display:'flex', flexDirection:'column', justifyContent:'space-around', alignItems:'center',height:125,}}>
+            <p className={styles.title}>DESCRIPTION: </p>
+            <p className={styles.text}>{article.description}</p>
+            <p className={styles.title}>COMPOSITION: </p>
+            <p className={styles.text}>{article.composition}</p>
+            <p className={styles.title}>CONSEIL D'ENTRETIEN: </p>
+            <p className={styles.text}>{article.advice}</p>
+            <p className={styles.title}>IDENTIFIANT(S): </p>
+            <p className={styles.text}>{article.ids}</p>
+            <div className={styles.btnContainer}>
                 <button
-                    style={{color:'black', backgroundColor:'white', borderWidth:1.5, borderColor:'black', borderRadius:20, fontSize:20, fontFamily:'DIN Condensed', width:150, height:35, cursor:'pointer'}}
+                    className={styles.addCartBtn}
                     onClick={() => addToCart()}
                 >
                     Ajouter au panier
                 </button>
                 <form action="/api/checkout_sessions" method="POST">
-                    {/* <section> */}
-                        <button
-                            style={{color:'white', backgroundColor:'black', borderWidth:1.5, borderColor:'white', borderRadius:20, fontSize:20, fontFamily:'DIN Condensed', width:150, height:35, cursor:'pointer'}}
-                            type="submit"
-                            role="link"
-                        >
-                            Payer
-                        </button>
-                    {/* </section> */}
+                    <button
+                        className={styles.payBtn}
+                        type="submit"
+                        role="link"
+                    >
+                        Payer
+                    </button>
                 </form>
                 
             </div>

@@ -67,14 +67,14 @@
     
     .popoverTitle {
         font-size:22px;
-        font-family: 'DIN Condensed';
+        font-family: 'Barlow Condensed';
     }
     
     .popoverContent {
         width:160px;
         color: rgb(78, 77, 77);
         font-size:20px;
-        font-family: 'DIN Condensed';
+        font-family: 'Barlow Condensed';
         padding-inline-start:20px;
         cursor: pointer;
     }
@@ -154,14 +154,14 @@
     
     .popoverTitle {
         font-size:22px;
-        font-family: 'DIN Condensed';
+        font-family: 'Barlow Condensed';
     }
     
     .popoverContent {
         width:160px;
         color: rgb(78, 77, 77);
         font-size:20px;
-        font-family: 'DIN Condensed';
+        font-family: 'Barlow Condensed';
         padding-inline-start:20px;
         cursor: pointer;
     }
@@ -234,14 +234,14 @@
     
     .popoverTitle {
         font-size:22px;
-        font-family: 'DIN Condensed';
+        font-family: 'Barlow Condensed';
     }
     
     .popoverContent {
         width:160px;
         color: rgb(78, 77, 77);
         font-size:20px;
-        font-family: 'DIN Condensed';
+        font-family: 'Barlow Condensed';
         padding-inline-start:20px;
         cursor: pointer;
     }

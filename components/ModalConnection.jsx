@@ -70,8 +70,8 @@ export default function ModalConnection(props) {
             </div>
 
             <div className={styles.footer}>
-                <p style={{fontFamily:'DIN condensed', color:'gray', fontSize:20}}>Pas de compte?</p>
-                <Link href='/signup' style={{textDecoration: 'none',}}><p style={{fontFamily:'DIN condensed', color:'white', fontSize:20, cursor:'pointer'}}>Inscrivez-vous</p></Link>
+                <p style={{fontFamily:'Barlow Condensed', color:'gray', fontSize:20}}>Pas de compte?</p>
+                <Link href='/signup' style={{textDecoration: 'none',}}><p style={{fontFamily:'Barlow Condensed', color:'white', fontSize:20, cursor:'pointer'}}>Inscrivez-vous</p></Link>
             </div>
         </div>
       </div>

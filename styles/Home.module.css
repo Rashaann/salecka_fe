@@ -1,5 +1,6 @@
 @media only screen and (min-width: 900px){
   /* COMPUTERS */
+
   .main {
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@
   
   .textIntro {
     font-size:40px;
-    font-family:'DIN condensed';
+    font-family:Barlow;
     width:800px;
   }
   

@@ -1,0 +1,234 @@
+@media only screen and (min-width: 900px){
+    /*Computers & Tablets [901px -> 1200px]*/
+    .body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        min-height:100vh;
+    }
+    
+    
+    .imgContainer{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        align-items:center;
+        width:90vw;
+    }
+    
+    .leftImgSubContainer{
+        display:flex;
+        width:35vw;
+        flex-direction:column;
+        align-items:center;
+        overflow-y:scroll;
+        height:450px;
+    }
+    
+    .rightImgSubContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:55vw;
+        cursor:pointer;
+    }
+    
+    .centralPic{
+        width:300px;
+    }
+    
+    
+    .infoContainer{
+        display:flex;
+        flex-direction:column;
+        width:90vw;
+        padding-left:20px;
+    }
+    
+    
+    .globalInfosSubContainer{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        height:300px;
+        border-top: 1px solid black;
+    }
+    
+    .name{
+        font-family:'Barlow Condensed';
+        font-size:25px;
+    }
+    
+    .price{
+        font-family:'Barlow Condensed';
+        font-size:45px;
+    }
+    
+    .title{
+        font-family:'Barlow Condensed';
+        font-size:25px;
+    }
+    
+    .text{
+        font-family:'Barlow Condensed';
+        font-size:20px;
+        color:gray;
+    }
+    
+    
+    .btnContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+        align-items:center;
+        height:125px;
+    }
+    
+    .addCartBtn{
+        color:black;
+        background-color:white;
+        border-width:1.5px;
+        border-color:black;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+    
+    .payBtn{
+        color:white;
+        background-color:black;
+        border-width:1.5px;
+        border-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px){
+    /*Computers & Tablets [325px -> 901px]*/
+    .body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        min-height:100vh;
+    }
+    
+    
+    .imgContainer{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        align-items:center;
+        width:90vw;
+    }
+    
+    .leftImgSubContainer{
+        display:flex;
+        width:35vw;
+        flex-direction:column;
+        align-items:center;
+        overflow-y:scroll;
+        height:450px;
+    }
+    
+    .rightImgSubContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:55vw;
+        cursor:pointer;
+    }
+    
+    .centralPic{
+        width:300px;
+    }
+    
+    
+    .infoContainer{
+        display:flex;
+        flex-direction:column;
+        width:90vw;
+        padding-left:20px;
+    }
+    
+    
+    .globalInfosSubContainer{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        height:300px;
+        border-top: 1px solid black;
+    }
+    
+    .name{
+        font-family:'Barlow Condensed';
+        font-size:25px;
+    }
+    
+    .price{
+        font-family:'Barlow Condensed';
+        font-size:45px;
+    }
+    
+    .title{
+        font-family:'Barlow Condensed';
+        font-size:25px;
+    }
+    
+    .text{
+        font-family:'Barlow Condensed';
+        font-size:20px;
+        color:gray;
+    }
+    
+    
+    .btnContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+        align-items:center;
+        height:125px;
+    }
+    
+    .addCartBtn{
+        color:black;
+        background-color:white;
+        border-width:1.5px;
+        border-color:black;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:200px;
+        height:40px;
+    }
+    
+    .payBtn{
+        color:white;
+        background-color:black;
+        border-width:1.5px;
+        border-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:200px;
+        height:40px;
+    }
+}
+
+

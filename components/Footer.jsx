@@ -135,7 +135,7 @@ export default function Footer() {
                 minHeight:200,
                 backgroundColor:'black',
                 color:'white',
-                fontFamily:'DIN Condensed',
+                fontFamily:'Barlow Condensed',
               }}
               mode="inline"
               items={items}

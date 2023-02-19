@@ -37,11 +37,11 @@ export default function Newsletter() {
     }
 
 
-    const errorMessage = <p style={{color:'red', fontSize:20, fontFamily:'DIN Condensed'}}>
+    const errorMessage = <p style={{color:'red', fontSize:20, fontFamily:'Barlow Condensed'}}>
     Erreur: le propriétaire de cette adresse email reçoit déjà notre newsletter!
     </p>
 
-    const grantedMessage = <p style={{color:'green', fontSize:20, fontFamily:'DIN Condensed'}}>
+    const grantedMessage = <p style={{color:'green', fontSize:20, fontFamily:'Barlow Condensed'}}>
     L'adresse email entrée a bien été enregistrée 😉
     </p>
 
@@ -84,9 +84,9 @@ export default function Newsletter() {
                 {isAlreadyRegistered ? errorMessage : ((isAlreadyRegistered===false)&&grantedMessage)}
             </div>
             <div style={{display:'flex', justifyContent:'center', alignItems:'center',}}>
-                <input type='text' placeholder='Mail' onChange={(e) => setEmail(e.target.value)} value={email} style={{borderWidth:1, width:600, height:50, borderTopLeftRadius:5, borderBottomLeftRadius:5, fontSize:20, padding:10, fontFamily:'DIN Condensed',}} />
+                <input type='text' placeholder='Mail' onChange={(e) => setEmail(e.target.value)} value={email} style={{borderWidth:1, width:600, height:50, borderTopLeftRadius:5, borderBottomLeftRadius:5, fontSize:20, padding:10, fontFamily:'Barlow Condensed',}} />
                 <button
-                    style={{backgroundColor:'black', color:'whitesmoke', height:50, width:100, borderTopRightRadius:5, borderBottomRightRadius:5, cursor:'pointer', borderWidth:1, fontFamily:'DIN Condensed', fontSize:17}}
+                    style={{backgroundColor:'black', color:'whitesmoke', height:50, width:100, borderTopRightRadius:5, borderBottomRightRadius:5, cursor:'pointer', borderWidth:1, fontFamily:'Barlow Condensed', fontSize:17}}
                     onClick={() => newsletterSubscription()}
                 >
                     S'abonner

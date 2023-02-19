@@ -252,7 +252,7 @@ export default function SubHeader() {
         <Menu
           style={{
             width: '100vw',
-            fontFamily:'DIN Condensed',
+            fontFamily:'Barlow Condensed',
           }}
           mode="inline"
           
