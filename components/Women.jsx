@@ -132,13 +132,42 @@ export default function Women() {
         'Maillots de bain',
         'Vêtements de sport',
         'Beauté']
+    const menuTags = [
+        'all',
+        'new',
+        'bestsellings',
+        'promo',
+        'dress',
+        'coats',
+        'pants',
+        'pulls',
+        'tops',
+        'blouses',
+        'sweatshirts',
+        'jeans',
+        'blazers',
+        'shoes',
+        'accessories',
+        'knit',
+        'basics',
+        'handbag',
+        'skirt',
+        'lingerie',
+        'home_clothes',
+        'pajamas',
+        'socks',
+        'suit',
+        'shorts',
+        'swimsuit',
+        'sportswear',
+        'beauty']
 
     const handleClickFilter = (e) => {
         setMenuItem(e);
         setShowMenu(false);
     }
     const dispMenu = menu.map((e,i) => {
-        return <div key={i} className={styles.menu} onClick={() => handleClickFilter(e)}><p>{e}</p></div>
+        return <div key={i} className={styles.menu} onClick={() => handleClickFilter(e)}><a href={`#${menuTags[i]}`} style={{textDecoration:'none', color:'black'}}><p>{e}</p></a></div>
     })
 
 

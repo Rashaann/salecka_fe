@@ -103,7 +103,7 @@
         justify-content: center;
         align-items: center;
         height:8vh;
-        width:20vw;
+        width:15vw;
         cursor: pointer;
     }
 
@@ -148,15 +148,23 @@
         display:flex;
         justify-content:center;
         align-items:center;
-        width:35vw;
-        height:5vh;
-        font-size:17px;
+        width:40vw;
+        height:7vh;
+        font-size:20px;
         padding:10px;
         font-family:'DIN Condensed';
         border-bottom:1px solid black;
         border-top-width:0px;
         border-left-width:0px;
         border-right-width:0px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .text{
+        font-size: 20px;
     }
 }
 

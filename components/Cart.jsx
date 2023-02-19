@@ -16,6 +16,7 @@ import Router from "next/router";
 import ModalCartConfirmation from './ModalCartConfirmation';
 import ModalFavsMessage from './ModalFavsMessage';
 
+import styles from '../styles/Cart.module.css';
 
 
 export default function Cart() {
@@ -143,7 +144,7 @@ export default function Cart() {
     });
 
   return (
-    <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center', minHeight:'100vh'}}>
+    <div className={styles.body}>
         {isConnectionModal && <ModalConnection setIsConnectionModal={setIsConnectionModal} />}
         {isCartConfModal && <ModalCartConfirmation setIsCartConfModal={setIsCartConfModal} article={article} />}
         {isArtToFavs && <ModalFavsMessage setIsArtToFavs={setIsArtToFavs} />}
@@ -153,7 +154,7 @@ export default function Cart() {
         </div>
 
         {cart.length===0?
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'70vh',}}>
+        <div className={styles.noArticles}>
             <p style={{fontSize:30}}>Pas d'articles ajoutés au panier pour le moment!</p>
         </div>:
         <div style={{display:'flex', flexDirection:'column', width:'95vw', height:'90vh', padding:20,}}>

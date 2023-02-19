@@ -138,7 +138,7 @@ const handleClick = (el) => {
         </div>
       </div>)
     } else if (i===10){
-      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></div>
+      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage('newarticles')}>Découvrir plus d'articles</button></div>
     }
   });
 
@@ -187,7 +187,7 @@ const handleClick = (el) => {
         </div>
       </div>)
     } else if (i===10){
-      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}}>Découvrir plus d'articles</button></div>
+      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage('populararticles')}>Découvrir plus d'articles</button></div>
     }
   });
 
