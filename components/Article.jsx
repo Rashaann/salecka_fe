@@ -16,6 +16,10 @@ import styles from '../styles/Article.module.css';
 
 
 
+
+
+
+
 export default function Article() {
     const [screenWidth, setScreenWidth] = useState(0);
     const [screenHeight, setScreenHeight] = useState(0);
@@ -23,9 +27,6 @@ export default function Article() {
 
     const [isConnectionModal, setIsConnectionModal] = useState(false);
     const [isArticleModal, setIsArticleModal] = useState(false);
-
-    const dispatch = useDispatch();
-
 
     const article = useSelector((state) => state.salecka.value.article);
     const cart = useSelector((state) => state.salecka.value.cart);

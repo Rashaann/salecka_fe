@@ -93,7 +93,7 @@ export default function Header(props) {
   return (
     <div className={styles.body}>
       {/* {isLoggedOut && <ModalLogoutMessage setIsLoggedOut={setIsLoggedOut} />} */}
-        <Link href='/'><a style={{textDecoration: 'none', color:'black'}}><img src='logo_black.png' width={100} height={50} style={{cursor:'pointer'}}/></a></Link>
+        <Link href='/'><a style={{textDecoration: 'none', color:'black'}}><img src='https://res.cloudinary.com/dldeqai4u/image/upload/v1677008911/logo_black_iw8wla.png' width={100} height={50} style={{cursor:'pointer'}}/></a></Link>
         <div className={styles.container}>
             {screenWidth<=600?
             <div style={{display:'flex', justifyContent:'center', alignItems:'center',}}>

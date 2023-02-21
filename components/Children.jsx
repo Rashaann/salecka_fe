@@ -21,6 +21,8 @@ import Router from "next/router";
 import styles from '../styles/Children.module.css';
 
 
+import { textToCleanNameUrl } from '../modules/cleanNameUrl';
+
 
 export default function Children() {
     const [screenWidth, setScreenWidth] = useState(0);
@@ -96,7 +98,9 @@ export default function Children() {
         // setChosenArticle(el);
         // setIsArticleModal(!isArticleModal);
         dispatch(addDataArticle(el));
-        Router.push('/article');
+        // Router.push('/article');
+        const namePage = `${textToCleanNameUrl(el.name)}-${textToCleanNameUrl(el.subname)}`
+        Router.push(`/articles/${namePage}`)
     }
 
     

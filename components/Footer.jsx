@@ -120,7 +120,7 @@ export default function Footer() {
               </div>
       
               <div className={styles.signature}>
-                  <img src='logo_black.png' width={80} height={40}/>
+                  <img src='https://res.cloudinary.com/dldeqai4u/image/upload/v1677008911/logo_black_iw8wla.png' width={80} height={40}/>
                   <p className={styles.signText}>Made with 💙 by Zakstein</p>
               </div>
           </div>

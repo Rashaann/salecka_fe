@@ -1,59 +1,156 @@
-.body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width:100vw;
-    min-height:100vh;
+@media only screen and (min-width: 900px){
+    /* COMPUTERS */
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width:100vw;
+        min-height:100vh;
+    }
+
+    .container {
+        display: flex;
+        padding:20px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 1000px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+
+    .input {
+        border-width:1;
+        border-style:double;
+        border-color:black;
+        width: 800px;
+        height:50px;
+        border-radius:10px;
+        font-size:16px;
+        padding-left:10px;
+        font-family:'Barlow Condensed';
+    }
+
+    .inputError {
+        border-width:1;
+        border-style:double;
+        border-color:red;
+        width: 800px;
+        height:50px;
+        border-radius:10px;
+        font-size:16px;
+        padding-left:10px;
+        font-family:'Barlow Condensed';
+    }
+
+    .btnContainer{
+        display:flex;
+        width:100vw;
+        height:200px;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .btn {
+        color:'black';
+        border: 1.5px solid black;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor: pointer;
+    }
 }
 
-.container {
-    display: flex;
-    padding:20px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 1000px;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-}
 
 
-.input {
-    border-width:1;
-    border-style:double;
-    border-color:black;
-    width: 800px;
-    height:50px;
-    border-radius:10px;
-    font-size:16px;
-    padding-left:10px;
-    font-family:'Barlow Condensed';
-}
 
-.inputError {
-    border-width:1;
-    border-style:double;
-    border-color:red;
-    width: 800px;
-    height:50px;
-    border-radius:10px;
-    font-size:16px;
-    padding-left:10px;
-    font-family:'Barlow Condensed';
-}
 
-.btn {
-    color:'black';
-    border: 1.5px solid black;
-    border-radius:20px;
-    font-size:20px;
-    font-family:'Barlow Condensed';
-    width:150px;
-    height:35px;
-    cursor: pointer;
+@media only screen and (max-width: 900px){
+    /* TABLETS & BIG & SMALL SMARTPHONES */
+
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width:100vw;
+        min-height:100vh;
+    }
+
+    .container {
+        display: flex;
+        padding:20px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100vh;
+        width:100vw;
+    }
+
+
+    .messages{
+        width:100vw;
+        padding-left: 15px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+
+    .input {
+        border-width:1;
+        border-style:double;
+        border-color:black;
+        width:85vw;
+        height:10vh;
+        border-radius:10px;
+        font-size:20px;
+        padding-left:10px;
+        font-family:'Barlow Condensed';
+    }
+
+    .inputError {
+        border-width:1;
+        border-style:double;
+        border-color:red;
+        width:85vw;
+        height:10vh;
+        border-radius:10px;
+        font-size:16px;
+        padding-left:10px;
+        font-family:'Barlow Condensed';
+    }
+
+    .btnContainer{
+        display:flex;
+        width:100vw;
+        height:200px;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .btn {
+        color:black;
+        border: 1.5px solid black;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor: pointer;
+    }
+
 }

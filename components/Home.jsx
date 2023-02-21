@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 
+
+import { textToCleanNameUrl } from '../modules/cleanNameUrl';
+
 import Header from './Header';
 import SubHeader from './SubHeader';
 import Footer from './Footer';
@@ -60,6 +63,9 @@ function Home() {
   }
 
 
+
+
+
   //DISPLAY CONFIRMATION MESSAGE OF SUCCESSFULL LOGOUT
   if(isLoggedOut){
     setTimeout(()=>{
@@ -87,7 +93,9 @@ function Home() {
 
 const handleClick = (el) => {
     dispatch(addDataArticle(el));
-    Router.push('/article');
+    // Router.push('/article');
+    const namePage = `${textToCleanNameUrl(el.name)}-${textToCleanNameUrl(el.subname)}`;
+    Router.push(`/articles/${namePage}`);
 }
 
 
@@ -138,7 +146,7 @@ const handleClick = (el) => {
         </div>
       </div>)
     } else if (i===10){
-      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage('newarticles')}>Découvrir plus d'articles</button></div>
+      return <div key={i} style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage('newarticles')}>Découvrir plus d'articles</button></div>
     }
   });
 
@@ -187,7 +195,7 @@ const handleClick = (el) => {
         </div>
       </div>)
     } else if (i===10){
-      return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage('populararticles')}>Découvrir plus d'articles</button></div>
+      return <div key={i} style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage('populararticles')}>Découvrir plus d'articles</button></div>
     }
   });
 
@@ -247,8 +255,7 @@ const dispArtByCat = (str) => {
           </div>
         </div>)
       } else if (i===articlesList.length-1){
-        console.log('IIIIII');
-        return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage(str)}>Découvrir plus d'articles</button></div>
+        return <div key={i} style={{display:'flex', justifyContent:'center', alignItems:'center'}}><button style={{width:200, height: 50, cursor:'pointer'}} onClick={() => goToPage(str)}>Découvrir plus d'articles</button></div>
       }
     });
     return articles;

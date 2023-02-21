@@ -109,7 +109,7 @@ export default function Signup() {
         </div>
 
         <div className={styles.container}>
-            <div>
+            <div className={styles.messages}>
                 <p>Les champs contenant un astérisque ( * ) sont nécessaires à l'inscription.</p>
                 {errorMsg}
             </div>
@@ -150,7 +150,7 @@ export default function Signup() {
                 </div>
             </div>
 
-            <div style={{display:'flex',width:500, height:200, justifyContent:'center', alignItems:'center'}}>
+            <div className={styles.btnContainer}>
                 <button className={styles.btn} onClick={() => handleClick()}>Inscription</button>
             </div>
         </div>
