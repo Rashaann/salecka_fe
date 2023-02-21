@@ -13,6 +13,8 @@ import Router from 'next/router';
 import { useDispatch } from 'react-redux';
 import { searchArticle } from '../reducers/salecka';
 
+import ModalSearch from './ModalSearch';
+
 
 
 export function getItem(label, key, icon, children, type) {
@@ -31,6 +33,8 @@ export function getItem(label, key, icon, children, type) {
 export default function SubHeader() {
   const [screenWidth, setScreenWidth] = useState(0);
   const [screenHeight, setScreenHeight] = useState(0);
+
+  const [isModalSearch, setIsModalSearch] = useState(false);
 
 
   const [search, setSearch] = useState('');
@@ -174,7 +178,7 @@ export default function SubHeader() {
 
 
   //Small screen devices
-  const searchBarSm = <div className={styles.searchIcon} onClick={() => setShowSearchBar(!showSearchBar)}><BsSearch size={25} /></div>
+  const searchBarSm = <div className={styles.searchIcon} onClick={() => setIsModalSearch(true)}><BsSearch size={25} /></div> //setShowSearchBar(!showSearchBar)
   
 
 
@@ -235,6 +239,7 @@ export default function SubHeader() {
 
   return (
     <div className={styles.body}>
+      {isModalSearch && <ModalSearch setIsModalSearch={setIsModalSearch}/>}
       <div className={styles.content}>
 
         {screenWidth<=600?categoriesSmSize:categories}

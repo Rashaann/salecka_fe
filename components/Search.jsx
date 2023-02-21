@@ -23,6 +23,7 @@ import styles from '../styles/Search.module.css';
 
 export default function Search() {
   const [articlesList, setArticlesList] = useState([]);
+  const [isArtToFavs, setIsArtToFavs] = useState(false);
 
 
   const [isConnectionModal, setIsConnectionModal] = useState(false);
@@ -55,6 +56,15 @@ export default function Search() {
   },[]);
 
 
+
+
+
+  const favsMessage = () => {
+    setIsArtToFavs(true);
+        setTimeout(() => {
+            setIsArtToFavs(false);
+        }, 2000);
+  }
 
 
   const addToFavs = (el) => {
@@ -115,13 +125,13 @@ export default function Search() {
                     </div>
                 </div>
                 <div className={styles.artContent} onClick={() => handleClick(el)}>
-                    <div style={{width:90, height:60}}>
-                        <p style={{fontSize:14}}>{el.name}</p>
-                        <p style={{fontSize:14}}>{el.subname}</p>
+                    <div className={styles.infoContainer}>
+                        <p className={styles.text}>{el.name}</p>
+                        <p className={styles.text}>{el.subname}</p>
                     </div>
 
-                    <div style={{width:90, height:60}}>
-                        <p style={{fontSize:27}}>{el.price}€</p>
+                    <div className={styles.priceContainer}>
+                        <p className={styles.price}>{el.price}€</p>
                     </div>
                 </div>
             </div>
@@ -129,22 +139,23 @@ export default function Search() {
         }
     });
 
+    console.log(articles);
+
 
   return (
-    <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center', minHeight:'100vh'}}>
+    <div className={styles.body}>
         {isConnectionModal && <ModalConnection setIsConnectionModal={setIsConnectionModal} />}
+        {isArtToFavs && <ModalFavsMessage setIsArtToFavs={setIsArtToFavs} />}
         {isLoggedOut && <ModalLogoutMessage setIsLoggedOut={setIsLoggedOut} />}
         <div>
             <Header isConnectionModal={isConnectionModal} isLoggedOut={isLoggedOut} setIsConnectionModal={setIsConnectionModal} setIsLoggedOut={setIsLoggedOut}  />
             <SubHeader />
         </div>
 
-        {/* <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'70vh',}}>
-            <p style={{fontSize:30}}>Page "Résultat(s) de recherche" en construction... 👨‍💻⚙️</p>
-            <p>{searchKey}</p>
-        </div> */}
-        <div style={{display:'flex', flexWrap:'wrap', justifyContent:'flex-start', alignItems:'center', height:'95vh',width:'90vw', overflowY:'scroll'}}>
-            {articles}
+        <div className={styles.container}>
+            {articles.every(el => el ===undefined)?
+            <p>Aucun articles correspondant à "{searchKey}".</p>:
+            articles}
         </div>
 
         <div>

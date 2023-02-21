@@ -1,52 +1,204 @@
-.artBody{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width:270px;
-    height:380px;
-    padding-right:30px;
-    background-color: white;
+@media only screen and (min-width: 900px){
+    /* COMPUTERS */
+    .body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        min-height:100vh;
+    }
+
+    .container{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        align-items:center;
+        height:95vh;
+        width:90vw;
+        overflow-y:scroll;
+    }
+
+
+
+
+
+    .artBody{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:270px;
+        height:380px;
+        padding-right:30px;
+        background-color: white;
+    }
+
+
+
+
+    .artContainer{
+        display: flex;
+        flex-direction:column;
+        width:200px;
+        height:300px;
+        border-radius:10px;
+    }
+
+    .artContainer:hover{
+        display: flex;
+        flex-direction:column;
+        width:250px;
+        height:350px;
+        border-radius:10px;
+        box-shadow: 5px 5px 5px gray;
+    }
+
+    .backgroundImg {
+        display:flex;
+        width:200px;
+        height:240px;
+        background-color:gray;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        justify-content:flex-end;
+        align-items:flex-start;
+        
+    }
+
+
+
+
+    .artContent {
+        display:flex;
+        height:60px;
+        justify-content:space-around;
+        align-items:center;
+        cursor:pointer;
+    }
+
+
+
+    .infoContainer{
+        width:90px;
+        height:60px;
+    }
+    .priceContainer{
+        width:90px;
+        height:60px;
+    }
+    .text{
+        font-size:14px;
+    }
+
+    .price{
+        font-size:27px;
+    }
+
 }
 
 
 
 
-.artContainer{
-    display: flex;
-    flex-direction:column;
-    width:200px;
-    height:300px;
-    border-radius:10px;
-}
-
-.artContainer:hover{
-    display: flex;
-    flex-direction:column;
-    width:250px;
-    height:350px;
-    border-radius:10px;
-    box-shadow: 5px 5px 5px gray;
-}
-
-.backgroundImg {
-    display:flex;
-    width:200px;
-    height:240px;
-    background-color:gray;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    justify-content:flex-end;
-    align-items:flex-start;
-    
-}
 
 
 
 
-.artContent {
-    display:flex;
-    height:60px;
-    justify-content:space-around;
-    align-items:center;
-    cursor:pointer;
+
+
+@media only screen and (max-width: 900px){
+    /* TABLETS & BIG & SMALL SMARTPHONES */
+    .body{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        min-height:100vh;
+    }
+
+    .container{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        align-items:center;
+        min-height:95vh;
+        width:100vw;
+    }
+
+
+
+
+
+    .artBody{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:50vw;
+        height:380px;
+        background-color: white;
+    }
+
+
+
+
+    .artContainer{
+        display: flex;
+        flex-direction:column;
+        width:45vw;
+        height:55vh;
+        border-radius:10px;
+    }
+
+    .artContainer:hover{
+        display: flex;
+        flex-direction:column;
+        width:45vw;
+        height:60vh;
+        border-radius:10px;
+        box-shadow: 5px 5px 5px gray;
+    }
+
+    .backgroundImg {
+        display:flex;
+        width:200px;
+        height:240px;
+        background-color:gray;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        justify-content:flex-end;
+        align-items:flex-start;
+    }
+
+
+
+
+    .artContent {
+        display:flex;
+        height:20vh;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+    }
+
+
+    .infoContainer{
+        width:45vw;
+        height:15vh;
+    }
+
+    .priceContainer{
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        width:45vw;
+        height:7vh;
+    }
+
+    .text{
+        font-size:18px;
+    }
+
+    .price{
+        font-size:27px;
+    }
+
 }

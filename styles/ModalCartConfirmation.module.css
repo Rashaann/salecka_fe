@@ -1,0 +1,160 @@
+@media only screen and (min-width: 900px){
+    /* COMPUTERS */
+    .modalContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:fixed;
+        z-index: 1;
+        width:100vw;
+        height:100vh;
+    }
+    
+    .modalSubContainer{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-direction:column;
+        background-color:white;
+        width:500px;
+        height:250px;
+        border-radius:10px;
+        border:1px solid black;
+    }
+    
+    .closeModal{
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        width:500px;
+        height:30px;
+        padding-right:15px;
+        padding-top:15px;
+        color:black;
+        cursor:pointer;
+    }
+    
+    .message{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        height:125px;
+        width:450px;
+    }
+    
+    .btnContainer{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        width:500px;
+        height:125px;
+    }
+    
+    .backBtn{
+        color:green;
+        background-color:white;
+        border-width:1px;
+        border-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+    
+    
+    .agreeBtn{
+        color:red;
+        background-color:white;
+        border-width:1px;
+        border-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+}  
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px){
+    /* TABLETS & BIG & SMALL SMARTPHONE */
+    .modalContainer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:fixed;
+        z-index: 1;
+        width:100vw;
+        height:100vh;
+    }
+    
+    .modalSubContainer{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-direction:column;
+        background-color:white;
+        width:95vw;
+        height:40vh;
+        border-radius:10px;
+        border:1px solid black;
+    }
+    
+    .closeModal{
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        width:95vw;
+        height:5vh;
+        padding-right:15px;
+        padding-top:15px;
+        color:black;
+        cursor:pointer;
+    }
+    
+    .message{
+        align-items:center;
+        height:125px;
+        width:90vw;
+    }
+    
+    .btnContainer{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        width:95vw;
+        height:125px;
+    }
+    
+    .backBtn{
+        color:green;
+        background-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+    
+    
+    .agreeBtn{
+        color:red;
+        background-color:white;
+        border-radius:20px;
+        font-size:20px;
+        font-family:'Barlow Condensed';
+        width:150px;
+        height:35px;
+        cursor:pointer;
+    }
+}  
